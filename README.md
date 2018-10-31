@@ -1,8 +1,33 @@
+
+<p align="center">
+  <a href="/LICENSE">
+    <img src="https://img.shields.io/github/license/BenRoe/rpi-magicmirror-eink.svg" alt="MIT">
+  </a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
+</p>
+
+## Requirements
+- Raspberry Pi with Raspbian
+- [Waveshare 7.5 epaper display](http://s.click.aliexpress.com/e/cs4zJho4) <small>(affiliate link)</small>
+- running [MagicMirror](https://github.com/MichMich/MagicMirror#server-only) (serveronly)
 ## Install dependencies
 
 - Update packages and install Git, Chrome Browser
 ```shell
 sudo apt-get update && sudo apt-get install -y git chromium-browser
+```
+- Install Node.js and npm
+```shell
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+- Install PM2 (process manager for Node.js)
+```shell
+sudo npm install -g pm2
+// Starting PM2 on Boot
+pm2 startup
+// pm2 start node serveronly
+// pm2 save
 ```
 
 ## Setup
@@ -21,17 +46,18 @@ cd rpi-magicmirror-eink
 npm install
 ```
 
-- Copy all files & folder from `magicmirror-files` to you MagicMirror css folder.  
-*Example: copy all files from magicmirror-files folder to the MagicMirror/css folder in the home directory.*
+- Copy all files & folder from `magicmirror-files/css` to your MagicMirror css folder.
 ```shell
-cp -a magicmirror-files/. ~/MagicMirror/css/
+cp -a magicmirror-files/css/. ~/MagicMirror/css
 ```
 
-- dfdf
+- Start the script with PM2 and run it in the background
+```shell
+pm2 start index.js --name "eink-update"
+pm2 save
+```
 
 ## Ressources
 - [Cherry bitmap font](https://github.com/turquoise-hexagon/cherry) by [marin](https://github.com/turquoise-hexagon) converted to ttf with [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
 - The project uses the Original Library written by Waveshare. It can be downloaded [here](https://www.waveshare.com/wiki/Main_Page#OLEDs_.2F_LCDs).
 
-## Licence
-MIT. See LICENCE.md
