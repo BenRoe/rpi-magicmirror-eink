@@ -1,0 +1,125 @@
+/*****************************************************
+ * Magic Mirror                                      *
+ * Custom CSS                                        *
+ *                                                   *
+ * By Michael Teeuw http://michaelteeuw.nl           *
+ * MIT Licensed.                                     *
+ *                                                   *
+ * Add any custom CSS below.                         *
+ * Changes to this files will be ignored by GIT. *
+ *****************************************************/
+
+/*!
+ *  Hack typeface https://github.com/source-foundry/Hack
+ *  License: https://github.com/source-foundry/Hack/blob/master/LICENSE.md
+ */
+/* FONT PATHS
+ * -------------------------- */
+
+/* Cherry */
+@font-face {
+  font-family: 'cherry10';
+  src: url('fonts/cherry-10-r.ttf')  format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cherry11';
+  src: url('fonts/cherry-11-r.ttf')  format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cherry13';
+  src: url('fonts/cherry-13-r.ttf')  format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cherry13';
+  src: url('fonts/cherry-13-b.ttf')  format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+header, body, .light, .medium {
+  -webkit-font-smoothing: none !important;
+  font-family: "cherry11";
+  font-weight: 400;
+  color: #fff;
+  font-size: 11px !important;
+}
+
+body {
+  width: calc(100% - 4px);
+  margin: 6px;
+}
+
+.normal, .bright{
+  color: #fff;
+}
+
+.small, .small .light {
+  font-family: "cherry10";
+  font-size: 10px !important;
+  line-height: 1.2em;
+}
+
+header {
+  font-size: 1em;
+  border-bottom: none;
+  line-height: 1.2em;
+  margin-bottom: 4px;
+}
+
+.container > .module:not(:last-child) {
+  border-bottom: 1px solid white;
+}
+
+.module {
+  margin-bottom: 20px;
+  padding-bottom: 7px;
+}
+/* Font Awesome */
+.fa {
+  -webkit-font-smoothing: none;
+}
+
+/* Clock Module */
+.module.clock .date {
+  font-family: "cherry13";
+  font-size: 13px !important;
+  font-weight: 700;
+}
+.module.clock .time {
+  display: none;
+}
+
+/* weatherforecast */
+.weatherforecast table {
+  width: fit-content;
+}
+
+/* MMM-Reddit */
+#mmm-reddit-slider .table td {
+  margin-right: 5px;
+  text-align: left;
+  font-size: 1em;
+  line-height: 1.1em !important;
+}
+#mmm-reddit-slider .table td.details {
+  display: inline-block;
+  font-size: 1em;
+}
+
+#mmm-reddit-slider .table tr {
+  display: block;
+}
+/* MMM-CoinMarketCap */
+.MMM-CoinMarketCap td.cell-priceWithChanges .changesPart,
+.MMM-CoinMarketCap td.cell-changes {
+  font-size: 1em;
+}
