@@ -62,11 +62,6 @@ pm2 save
 - [ ] 3d print case
 - [ ] support more waveshare epaper display sizes
 - [ ] white background/black font mode (invert image with [jimp](https://github.com/oliver-moran/jimp) (image.invert();))
-=======
-- [] 3d print case
-- [] support more waveshare epaper display sizes
-- [] white background/black font mode (invert image with [jimp](https://github.com/oliver-moran/jimp) (image.invert();))
->>>>>>> origin/master
 
 ## Ressources
 - [Cherry bitmap font](https://github.com/turquoise-hexagon/cherry) by [marin](https://github.com/turquoise-hexagon) converted to ttf with [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
