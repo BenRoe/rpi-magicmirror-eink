@@ -57,6 +57,11 @@ pm2 start index.js --name "eink-update"
 pm2 save
 ```
 
+## Todo
+- [ ] 3d print case
+- [ ] support more waveshare epaper display sizes
+- [ ] white background/black font mode (invert image with [jimp](https://github.com/oliver-moran/jimp) (image.invert();))
+
 ## Ressources
 - [Cherry bitmap font](https://github.com/turquoise-hexagon/cherry) by [marin](https://github.com/turquoise-hexagon) converted to ttf with [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
 - The project uses the Original Library written by Waveshare. It can be downloaded [here](https://www.waveshare.com/wiki/Main_Page#OLEDs_.2F_LCDs).
