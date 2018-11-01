@@ -78,8 +78,8 @@ var config = {
 			header: "Weather Forecast",
 			config: {
 				location: "Leipzig",
-				locationID: "2879139",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "b819a4b8dc7732c41ff2e8688421f82a",
+				locationID: "",  //ID from http://www.openweathermap.org/help/city_list.txt
+				appid: "",
         roundTemp: true,
         animationSpeed: 0,
         fade: false,
