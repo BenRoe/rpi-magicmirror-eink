@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "debug": "DEBUG=puppeteer,puppeteer:cpPython node index.js",
-    "debugFull": "DEBUG=puppeteer:*, node puppeteer.js"
+    "debugFull": "DEBUG=puppeteer:*, node index.js"
   },
   "author": "benroe",
   "license": "ISC",

@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
 </p>
 <p align="center">
-<img style="max-height:400px" src="screenshot.jpg">
+<img style="max-height:300px" src="screenshot.jpg">
 </p>
 
 ## Requirements
@@ -52,6 +52,11 @@ npm install
 - Copy all files & folder from `magicmirror-files/css` to your MagicMirror css folder.
 ```shell
 cp -a magicmirror-files/css/. ~/MagicMirror/css
+```
+
+- Copy the prepared MagicMirror config.js to MagicMirror config folder.
+```shell
+cp magicmirror-files/config.js ~/MagicMirror/config/
 ```
 
 - Start the script with PM2 and run it in the background
