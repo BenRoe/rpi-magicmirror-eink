@@ -31,7 +31,7 @@ const job = new CronJob({
         height: global.gConfig.display_height
       });
       await page.goto(`http://localhost:${global.gConfig.magicmirror_port}`);
-      await page.waitFor(global.gConfig.wait_to_load);
+      await page.waitFor(global.gConfig.wait_to_load*1000);
       await page.screenshot({path: 'black.png'});
 
       await browser.close();
