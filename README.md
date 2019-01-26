@@ -9,10 +9,28 @@
 <img style="max-height:300px" src="screenshot.jpg">
 </p>
 
+## How it works
+The node.js script uses [puppeteer (Headless Chrome Node API)](https://github.com/GoogleChrome/puppeteer),
+to take a screenshot of the local running MagicMirror site (localhost:808) and saves it.  
+*You can change the size of the screenshot and the MagicMirror port in the
+ [config.js](https://github.com/BenRoe/rpi-magicmirror-eink/blob/master/config.js) file.*  
+
+Then the script executes a the eInk Python script from the
+ [ePaperPython folder](https://github.com/BenRoe/rpi-magicmirror-eink/tree/master/ePaperPython)
+ and updates the eInk screen.  
+This is the original Python script from [Waveshare](https://www.waveshare.com/wiki/7.5inch_e-Paper_HAT).
+
+
 ## Requirements
 - Raspberry Pi with Raspbian
 - [Waveshare 7.5 epaper display](http://s.click.aliexpress.com/e/cs4zJho4) <small>(affiliate link)</small>
 - running [MagicMirror](https://github.com/MichMich/MagicMirror#server-only) (serveronly)
+
+## Resources
+- [3d printable frame](https://www.thingiverse.com/thing:3382910)
+- [Installations-Tutorial (deutsch)](https://maker-tutorials.com/7-5-eink-epaper-bilderrahmen-magicmirror-display-raspberry-pi-zero-w/)
+- [MagicMirror Module List](https://github.com/MichMich/MagicMirror/wiki/3rd-Party-Modules)
+
 ## Install dependencies
 
 - Update packages and install Git, Chrome Browser
@@ -66,7 +84,7 @@ pm2 save
 ```
 
 ## Todo
-- [ ] 3d print case
+- [X] 3d print case
 - [ ] support more waveshare epaper display sizes
 - [ ] white background/black font mode (invert image with [jimp](https://github.com/oliver-moran/jimp) (image.invert();))
 
