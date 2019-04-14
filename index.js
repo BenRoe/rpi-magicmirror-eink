@@ -36,7 +36,11 @@ const job = new CronJob({
 
       await browser.close();
 
-      const childPython = spawn('python', ['./ePaperPython/main.py']);
+      pythonArgs = ['./ePaperPython/main.py', global.gConfig.display_type]
+      if (global.gConfig.display_invert) {
+        pythonArgs.push("--invert")
+      }
+      const childPython = spawn('python', pythonArgs);
 
       childPython.stdout.on('data', (data) => {
         debugChildP(data.toString());
