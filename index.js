@@ -30,7 +30,7 @@ const job = new CronJob({
         width: global.gConfig.display_width,
         height: global.gConfig.display_height
       });
-      await page.goto(`http://localhost:${global.gConfig.magicmirror_port}`);
+      await page.goto(`http://localhost:${global.gConfig.magicmirror_port}/showfloorplan/`);
       await page.waitFor(global.gConfig.wait_to_load*1000);
       await page.screenshot({path: 'black.png'});
 
