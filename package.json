@@ -11,9 +11,9 @@
   "author": "benroe",
   "license": "ISC",
   "dependencies": {
-    "cron": "^1.4.1",
-    "debug": "^4.1.0",
-    "jimp": "^0.5.3",
-    "puppeteer-core": "^1.8.0"
+    "cron": "^1.8.2",
+    "debug": "^4.1.1",
+    "jimp": "^0.9.5",
+    "puppeteer-core": "2.1.1"
   }
 }
