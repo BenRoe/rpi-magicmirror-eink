@@ -25,9 +25,9 @@
  ##
 
 import epd7in5
-import Image
-import ImageDraw
-import ImageFont
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
 #import imagedata
 
 EPD_WIDTH = 640
