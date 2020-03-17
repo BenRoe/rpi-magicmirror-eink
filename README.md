@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
 </p>
 <p align="center">
-<img style="max-height:300px" src="screenshot.jpg">
+<img style="max-height:300px" src="cover.jpg">
 </p>
 
 ## How it works
