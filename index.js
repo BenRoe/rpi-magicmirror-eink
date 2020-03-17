@@ -4,6 +4,7 @@ const path = require('path');
 const spawn = require('child_process').spawn;
 const CronJob = require('cron').CronJob;
 const puppeteer = require('puppeteer-core');
+const Jimp = require('jimp');
 
 // config variables
 const config = require('./config.js');
@@ -12,13 +13,13 @@ const config = require('./config.js');
 // and their names should always begin with g
 global.gConfig = config;
 
+const fileName = 'screenshot.png';
 let d = new Date();
 
 const job = new CronJob({
 
   cronTime: global.gConfig.refresh_interval,
   timezone: global.gConfig.timezone,
-
   onTick: function() {
     let d = new Date();
 
@@ -49,9 +50,21 @@ const job = new CronJob({
       // change it in config.js "wait_to_load"
       await page.waitFor(global.gConfig.wait_to_load*1000);
 
-      await page.screenshot({path: 'black.png'});
+      await page.screenshot({path: fileName});
 
       await browser.close();
+      
+      // invert colors for the screenshot
+      if (global.gConfig.invert_color) {
+        // read the screenshot
+        const img = await Jimp.read(fileName);
+        
+        // invert the image
+        await img.invert();
+          
+        //save image
+        await img.quality(80).writeAsync(fileName);
+      }
 
       // run the python script to display the screenshots on the eink display
       const childPython = spawn('python', ['./ePaperPython/main.py']);
@@ -78,9 +91,10 @@ const job = new CronJob({
     const date = new Date();
     debug('puppeteer STOPPED at ', d);
   },
+  start: true,
+  runOnInit: true,
 });
 
 debug('Script START at', d);
-job.start();
 
 
