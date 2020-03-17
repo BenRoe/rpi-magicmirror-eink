@@ -28,8 +28,6 @@ import epd7in5
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-import PIL.ImageOps 
-from datetime import datetime
 #import imagedata
 
 EPD_WIDTH = 640
@@ -52,25 +50,10 @@ def main():
     # epd.display_frame(epd.get_frame_buffer(image))
 
     image = Image.open('black.png')
-    image = PIL.ImageOps.invert(image.convert("RGB"))
-    draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf', 59)
-    draw.text((200, 10), getTime(), font = font, fill = 255)
-    draw.text((0, 10), getDate(), font = font, fill = 255)
-
-    
     epd.display_frame(epd.get_frame_buffer(image))
 
     # You can get frame buffer from an image or import the buffer directly:
     #epd.display_frame(imagedata.MONOCOLOR_BITMAP)
-
-def getTime():
-    now = datetime.now()
-    return now.strftime("%H:%M")
-
-def getDate():
-    now = datetime.now()
-    return now.strftime("%d.%m")
 
 if __name__ == '__main__':
     main()
