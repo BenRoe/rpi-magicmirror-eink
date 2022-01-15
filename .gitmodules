@@ -1,0 +1,3 @@
+[submodule "ePaperPython/driver"]
+	path = ePaperPython/driver
+	url = https://github.com/waveshare/e-Paper

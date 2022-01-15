@@ -62,6 +62,11 @@ git clone https://github.com/BenRoe/rpi-magicmirror-eink.git
 cd rpi-magicmirror-eink
 ```
 
+- Obtain Waveshare driver
+```shell
+git submodule update --init --recursive
+```
+
 - Install Node.js dependencies (inside the `rpi-magicmirror-eink` folder)
 ```shell
 npm install

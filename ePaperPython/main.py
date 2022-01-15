@@ -24,14 +24,9 @@
  # THE SOFTWARE.
  ##
 
-import epd7in5
+from driver.RaspberryPi_JetsonNano.python.lib.waveshare_epd import epd7in5
 from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
 #import imagedata
-
-EPD_WIDTH = 640
-EPD_HEIGHT = 384
 
 def main():
     epd = epd7in5.EPD()
@@ -50,7 +45,7 @@ def main():
     # epd.display_frame(epd.get_frame_buffer(image))
 
     image = Image.open('screenshot.png')
-    epd.display_frame(epd.get_frame_buffer(image))
+    epd.display(epd.getbuffer(image))
 
     # You can get frame buffer from an image or import the buffer directly:
     #epd.display_frame(imagedata.MONOCOLOR_BITMAP)
